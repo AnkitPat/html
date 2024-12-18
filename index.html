@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive CSS Grid</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr); /* 12 columns */
+      gap: 10px; /* Spacing between columns */
+      padding: 10px;
+    }
+
+    .col {
+      background-color: #3c8c82;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    /* Default Column Spans */
+    .col-1 { grid-column: span 1; }
+    .col-2 { grid-column: span 2; }
+    .col-3 { grid-column: span 3; }
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-9 { grid-column: span 9; }
+    .col-12 { grid-column: span 12; }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(8, 1fr); /* 8 columns for medium screens */
+      }
+      .col-8, .col-9 { grid-column: span 8; }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for tablets */
+      }
+      .col-6, .col-8, .col-9, .col-12 { grid-column: span 4; }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+      }
+      .col-4, .col-6, .col-8, .col-9, .col-12 { grid-column: span 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- First Row -->
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+
+    <!-- Second Row -->
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+
+    <!-- Third Row -->
+    <div class="col col-3">Col 3</div>
+    <div class="col col-3">Col 3</div>
+    <div class="col col-3">Col 3</div>
+    <div class="col col-3">Col 3</div>
+
+    <!-- Fourth Row -->
+    <div class="col col-4">Col 4</div>
+    <div class="col col-4">Col 4</div>
+    <div class="col col-4">Col 4</div>
+
+    <!-- Fifth Row -->
+    <div class="col col-6">Col 6</div>
+    <div class="col col-6">Col 6</div>
+
+    <!-- Sixth Row -->
+    <div class="col col-8">Col 8</div>
+    <div class="col col-4">Col 4</div>
+
+    <!-- Seventh Row -->
+    <div class="col col-9">Col 9</div>
+    <div class="col col-3">Col 3</div>
+
+    <!-- Eighth Row -->
+    <div class="col col-12">Col 12</div>
+
+    <!-- Ninth Row -->
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-4">Col 4</div>
+    <div class="col col-2">Col 2</div>
+    <div class="col col-2">Col 2</div>
+
+    <!-- Tenth Row -->
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-8">Col 8</div>
+    <div class="col col-1">Col 1</div>
+    <div class="col col-1">Col 1</div>
+  </div>
+</body>
+</html>
